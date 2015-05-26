@@ -20,4 +20,11 @@ public class PlayerController : MonoBehaviour {
 
 		this.Rigidbody.AddForce(speed * movement);
 	}
+	
+	void OnTriggerEnter (Collider other) {
+		if (other.gameObject.tag == "PickUp")
+		{
+			Destroy (other.gameObject);
+		}
+	}
 }
