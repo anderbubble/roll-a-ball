@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
 	public float speed;
 	public Text scoreUI;
+	public Text messageUI;
 
 	private Rigidbody Rigidbody;
 	protected int _score;
@@ -19,6 +20,10 @@ public class PlayerController : MonoBehaviour {
 		{
 			this._score = value;
 			this.UpdateScoreUI();
+			if (this.countPickUps() <= 0)
+			{
+				this.messageUI.text = "You win!";
+			}
 		}
 	}
 
@@ -40,13 +45,24 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		if (other.gameObject.tag == "PickUp")
 		{
-			Destroy (other.gameObject);
-			this.score += 1;
+			this.CollectPickUp (other.gameObject);
 		}
+	}
+
+	void CollectPickUp (GameObject PickUp)
+	{
+		PickUp.SetActive (false);
+		Destroy (PickUp);
+		this.score += 1;
 	}
 
 	void UpdateScoreUI ()
 	{
 		this.scoreUI.text = string.Format("Score: {0}", this.score);
+	}
+
+	int countPickUps ()
+	{
+		return GameObject.FindGameObjectsWithTag("PickUp").Length;
 	}
 }
