@@ -7,13 +7,25 @@ public class PlayerController : MonoBehaviour {
 	public Text scoreUI;
 
 	private Rigidbody Rigidbody;
-	private int score;
+	protected int _score;
+	private int score
+	{
+		get
+		{
+			return this._score;
+		}
+
+		set
+		{
+			this._score = value;
+			this.UpdateScoreUI();
+		}
+	}
 
 	void Start ()
 	{
 		this.Rigidbody = GetComponent<UnityEngine.Rigidbody>();
 		this.score = 0;
-		this.UpdateScoreUI ();
 	}
 
 	void FixedUpdate ()
@@ -30,7 +42,6 @@ public class PlayerController : MonoBehaviour {
 		{
 			Destroy (other.gameObject);
 			this.score += 1;
-			this.UpdateScoreUI();
 		}
 	}
 
