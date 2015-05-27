@@ -1,15 +1,19 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
-	float Thrust;
-	Rigidbody Rigidbody;
-
 	public float speed;
+	public Text scoreUI;
+
+	private Rigidbody Rigidbody;
+	private int score;
 
 	void Start ()
 	{
 		this.Rigidbody = GetComponent<UnityEngine.Rigidbody>();
+		this.score = 0;
+		this.UpdateScoreUI ();
 	}
 
 	void FixedUpdate ()
@@ -25,6 +29,13 @@ public class PlayerController : MonoBehaviour {
 		if (other.gameObject.tag == "PickUp")
 		{
 			Destroy (other.gameObject);
+			this.score += 1;
+			this.UpdateScoreUI();
 		}
+	}
+
+	void UpdateScoreUI ()
+	{
+		this.scoreUI.text = string.Format("Score: {0}", this.score);
 	}
 }
