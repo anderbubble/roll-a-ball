@@ -32,9 +32,10 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		this.score = 0;
 		Transform player = (Transform) this.playerSpawn.Spawn ();
+		player.GetComponent<PlayerController>().GameController = this;
 		this.cameraController.player = player;
 
-		Transform pickup = (Transform) this.pickupSpawn.Spawn ();
+		this.pickupSpawn.Spawn ();
 	}
 
 	public void Score () {

@@ -24,7 +24,14 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		if (other.gameObject.tag == "PickUp")
 		{
-			other.GetComponent<PickupController>().Collect();
+			this.CollectPickUp (other.gameObject);
 		}
+	}
+	
+	public void CollectPickUp (GameObject pickup)
+	{
+		pickup.SetActive (false);
+		Destroy (pickup);
+		this.GameController.Score();
 	}
 }
