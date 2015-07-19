@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 	public float speed;
 	public GameController GameController;
+	public Transform Camera;
 
 	private Rigidbody Rigidbody;
 
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		var horizontal = Input.GetAxis ("Horizontal");
 		var vertical = Input.GetAxis ("Vertical");
-		var movement = new Vector3(horizontal, 0, vertical);
+		var movement = Camera.TransformDirection (new Vector3(horizontal, 0, vertical));
 
 		this.Rigidbody.AddForce(speed * movement);
 	}

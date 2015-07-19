@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour {
 		this.score = 0;
 		this.player = (Transform) this.playerSpawn.Spawn ();
 		this.player.GetComponent<PlayerController>().GameController = this;
+		this.player.GetComponent<PlayerController>().Camera = this.cameraController.GetComponent<Transform>();
 		this.cameraController.player = this.player;
 		this.SpawnPickUp ();
 	}
