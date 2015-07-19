@@ -525,7 +525,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 148900, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
       propertyPath: m_Name
-      value: PickupSpawn
+      value: PickupSpawn 1
       objectReference: {fileID: 0}
     - target: {fileID: 11404930, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
       propertyPath: template
@@ -820,7 +820,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpawn: {fileID: 271925009}
-  pickupSpawn: {fileID: 1346073272}
+  PickupSpawn:
+  - {fileID: 1346073272}
   cameraController: {fileID: 1212326769}
   scoreUI: {fileID: 2033755362}
   messageUI: {fileID: 1082909067}
@@ -835,7 +836,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &1579463709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,3 +1125,49 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: .5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!1001 &2127965637
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 474266, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 474266, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474266, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 474266, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474266, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474266, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 474266, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 474266, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 148900, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: m_Name
+      value: PickupSpawn 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+  m_IsPrefabParent: 0

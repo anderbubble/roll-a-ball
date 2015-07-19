@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class GameController : MonoBehaviour {
 
 	public SpawnController playerSpawn;
-	public SpawnController pickupSpawn;
+	public List<SpawnController> PickupSpawn;
 	public CameraController cameraController;
 	public Text scoreUI;
 	public Text messageUI;
@@ -27,19 +29,39 @@ public class GameController : MonoBehaviour {
 			}
 		}
 	}
+	Transform player;
 
 	// Use this for initialization
 	void Start () {
 		this.score = 0;
-		Transform player = (Transform) this.playerSpawn.Spawn ();
-		player.GetComponent<PlayerController>().GameController = this;
-		this.cameraController.player = player;
+		this.player = (Transform) this.playerSpawn.Spawn ();
+		this.player.GetComponent<PlayerController>().GameController = this;
+		this.cameraController.player = this.player;
+		this.SpawnPickUp ();
+	}
 
-		this.pickupSpawn.Spawn ();
+	void SpawnPickUp()
+	{
+		Debug.Log ("spawn");
+		if (this.PickupSpawn.Count > 0) {
+			int spawnPointIndex = Mathf.FloorToInt(Random.value * this.PickupSpawn.Count);
+			Debug.Log (spawnPointIndex);
+			if (!this.PickupSpawn[spawnPointIndex].GetComponent<Collider>().bounds.Intersects (this.player.GetComponent<Collider>().bounds)) {
+				this.PickupSpawn[spawnPointIndex].Spawn ();
+			}
+		}
 	}
 
 	public void Score () {
 		this.score += 1;
+	}
+
+	void Update ()
+	{
+		if (this.countPickUps() < 1)
+		{
+			this.SpawnPickUp ();
+		}
 	}
 	
 	void UpdateScoreUI ()
