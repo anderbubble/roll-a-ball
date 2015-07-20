@@ -43,10 +43,8 @@ public class GameController : MonoBehaviour {
 
 	void SpawnPickUp()
 	{
-		Debug.Log ("spawn");
 		if (this.PickupSpawn.Count > 0) {
 			int spawnPointIndex = Mathf.FloorToInt(Random.value * this.PickupSpawn.Count);
-			Debug.Log (spawnPointIndex);
 			if (!this.PickupSpawn[spawnPointIndex].GetComponent<Collider>().bounds.Intersects (this.player.GetComponent<Collider>().bounds)) {
 				this.PickupSpawn[spawnPointIndex].Spawn ();
 			}

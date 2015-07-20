@@ -5,19 +5,21 @@ public class CameraController : MonoBehaviour
 {
 
 	public Transform player;
+	public int speed = 10;
 	private Vector3 offset;
-
-	// Use this for initialization
-	void Start ()
-	{
-		//this.transform.LookAt (this.player.);
-		//offset = this.transform.position - this.player.position;
-	}
 	
-	// Update is called once per frame
+	
+	void FixedUpdate ()
+	{
+		var horizontal = Input.GetAxis ("CameraHorizontal");
+		var vertical = Input.GetAxis ("CameraVertical");
+		var movement = new Vector3(horizontal, 0, vertical);
+		
+		this.GetComponent<Rigidbody>().AddForce(speed * movement);
+	}
+
 	void LateUpdate ()
 	{
 		this.transform.LookAt (this.player);
-		//this.transform.position = this.player.position + offset;
 	}
 }
