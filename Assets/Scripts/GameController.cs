@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour {
 	public CameraController cameraController;
 	public Text scoreUI;
 	public Text messageUI;
-	protected int _score;
+	protected int _score = 0;
 	private int score
 	{
 		get
@@ -33,7 +33,6 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.score = 0;
 		this.player = (Transform) this.playerSpawn.Spawn ();
 		this.player.GetComponent<PlayerController>().GameController = this;
 		this.player.GetComponent<PlayerController>().Camera = this.cameraController.GetComponent<Transform>();

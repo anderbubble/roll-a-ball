@@ -538,7 +538,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 474266, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 474266, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
       propertyPath: m_LocalPosition.z
@@ -798,7 +798,6 @@ GameObject:
   - 124: {fileID: 1212326765}
   - 81: {fileID: 1212326764}
   - 114: {fileID: 1212326769}
-  - 54: {fileID: 1212326770}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -884,21 +883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
---- !u!54 &1212326770
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1212326763}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  speed: 180
 --- !u!114 &1346073272 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11404930, guid: 3d140c2caca9e471185e98cbe8c56ebb,

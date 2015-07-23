@@ -15,9 +15,11 @@ public class CameraController : MonoBehaviour
 	void LateUpdate ()
 	{
 		this.offset =
-			Quaternion.AngleAxis(Time.deltaTime * this.speed * Input.GetAxis ("CameraHorizontal"), Vector3.up)
-			* Quaternion.AngleAxis (Time.deltaTime * this.speed * Input.GetAxis ("CameraVertical"), Vector3.right)
-			* this.offset;
+			Quaternion.AngleAxis(Time.deltaTime * this.speed * Input.GetAxis ("Mouse X"), Vector3.up)
+				* this.offset;
+		this.offset =
+			Quaternion.AngleAxis (Time.deltaTime * this.speed * Input.GetAxis ("Mouse Y"), Vector3.Cross (this.offset, Vector3.up))
+				* this.offset;
 		this.transform.position = target.position - this.offset;
 		this.transform.LookAt(target);
 	}
