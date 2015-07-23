@@ -37,7 +37,8 @@ public class GameController : MonoBehaviour {
 		this.player = (Transform) this.playerSpawn.Spawn ();
 		this.player.GetComponent<PlayerController>().GameController = this;
 		this.player.GetComponent<PlayerController>().Camera = this.cameraController.GetComponent<Transform>();
-		this.cameraController.player = this.player;
+		this.cameraController.target = this.player;
+		this.cameraController.gameObject.SetActive (true);
 		this.SpawnPickUp ();
 	}
 
@@ -57,7 +58,7 @@ public class GameController : MonoBehaviour {
 
 	void Update ()
 	{
-		if (this.countPickUps() < 1)
+		if (this.countPickUps() < 1 && this.score < 10)
 		{
 			this.SpawnPickUp ();
 		}

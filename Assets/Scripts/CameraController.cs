@@ -3,23 +3,22 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
-
-	public Transform player;
-	public int speed = 10;
+	public Transform target;
 	private Vector3 offset;
-	
-	
-	void FixedUpdate ()
+	public float speed = 180;
+
+	void Start ()
 	{
-		var horizontal = Input.GetAxis ("CameraHorizontal");
-		var vertical = Input.GetAxis ("CameraVertical");
-		var movement = new Vector3(horizontal, 0, vertical);
-		
-		this.GetComponent<Rigidbody>().AddForce(speed * movement);
+		this.offset = target.position - this.transform.position;
 	}
 
 	void LateUpdate ()
 	{
-		this.transform.LookAt (this.player);
+		this.offset =
+			Quaternion.AngleAxis(Time.deltaTime * this.speed * Input.GetAxis ("CameraHorizontal"), Vector3.up)
+			* Quaternion.AngleAxis (Time.deltaTime * this.speed * Input.GetAxis ("CameraVertical"), Vector3.right)
+			* this.offset;
+		this.transform.position = target.position - this.offset;
+		this.transform.LookAt(target);
 	}
 }

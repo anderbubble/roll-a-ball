@@ -87,6 +87,12 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &128779995 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11404930, guid: 3d140c2caca9e471185e98cbe8c56ebb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1980378459}
+  m_Script: {fileID: 11500000, guid: 56bb4eb0dc79d4b9791b05b06054a212, type: 3}
 --- !u!1 &184410993
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +410,10 @@ Prefab:
       propertyPath: m_Name
       value: PickupSpawn 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11404930, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: template
+      value: 
+      objectReference: {fileID: 493738, guid: 3afbcc24259954431a40a1a3ef2b1657, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
   m_IsPrefabParent: 0
@@ -565,6 +575,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &981184753 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11404930, guid: 3d140c2caca9e471185e98cbe8c56ebb,
+    type: 2}
+  m_PrefabInternal: {fileID: 795782667}
+  m_Script: {fileID: 11500000, guid: 56bb4eb0dc79d4b9791b05b06054a212, type: 3}
 --- !u!1001 &1080243084
 Prefab:
   m_ObjectHideFlags: 0
@@ -789,7 +805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1212326764
 AudioListener:
   m_ObjectHideFlags: 0
@@ -867,8 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: becdbaedba7c747d38b9eb5a857ec1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 10
+  target: {fileID: 0}
 --- !u!54 &1212326770
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -920,6 +935,9 @@ MonoBehaviour:
   playerSpawn: {fileID: 271925009}
   PickupSpawn:
   - {fileID: 1346073272}
+  - {fileID: 1849884267}
+  - {fileID: 128779995}
+  - {fileID: 981184753}
   cameraController: {fileID: 1212326769}
   scoreUI: {fileID: 2033755362}
   messageUI: {fileID: 1082909067}
@@ -1009,6 +1027,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &1849884267 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11404930, guid: 3d140c2caca9e471185e98cbe8c56ebb,
+    type: 2}
+  m_PrefabInternal: {fileID: 2127965637}
+  m_Script: {fileID: 11500000, guid: 56bb4eb0dc79d4b9791b05b06054a212, type: 3}
 --- !u!4 &1849884268 stripped
 Transform:
   m_PrefabParentObject: {fileID: 474266, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
@@ -1193,6 +1217,10 @@ Prefab:
       propertyPath: m_Name
       value: PickupSpawn 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11404930, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: template
+      value: 
+      objectReference: {fileID: 493738, guid: 3afbcc24259954431a40a1a3ef2b1657, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
   m_IsPrefabParent: 0
@@ -1324,6 +1352,10 @@ Prefab:
       propertyPath: m_Name
       value: PickupSpawn 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11404930, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
+      propertyPath: template
+      value: 
+      objectReference: {fileID: 493738, guid: 3afbcc24259954431a40a1a3ef2b1657, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d140c2caca9e471185e98cbe8c56ebb, type: 2}
   m_IsPrefabParent: 0

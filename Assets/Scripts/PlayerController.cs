@@ -17,9 +17,8 @@ public class PlayerController : MonoBehaviour {
 	{
 		var horizontal = Input.GetAxis ("Horizontal");
 		var vertical = Input.GetAxis ("Vertical");
-		var movement = Camera.TransformDirection (new Vector3(horizontal, 0, vertical));
-
-		this.Rigidbody.AddForce(speed * movement);
+		var movement = this.Camera.TransformDirection (new Vector3(horizontal, 0, vertical));
+		this.Rigidbody.AddForce(this.speed * movement);
 	}
 	
 	void OnTriggerEnter (Collider other) {
